@@ -1394,12 +1394,6 @@ default_test!(Ui { path: "tests/ui", mode: "ui", suite: "ui" });
 
 default_test!(Crashes { path: "tests/crashes", mode: "crashes", suite: "crashes" });
 
-default_test!(RunPassValgrind {
-    path: "tests/run-pass-valgrind",
-    mode: "run-pass-valgrind",
-    suite: "run-pass-valgrind"
-});
-
 default_test!(Codegen { path: "tests/codegen", mode: "codegen", suite: "codegen" });
 
 default_test!(CodegenUnits {
@@ -2088,7 +2082,7 @@ NOTE: if you're sure you want to do this, please open an issue as to why. In the
         }
 
         if builder.config.profiler_enabled(target) {
-            cmd.arg("--profiler-support");
+            cmd.arg("--profiler-runtime");
         }
 
         cmd.env("RUST_TEST_TMPDIR", builder.tempdir());
